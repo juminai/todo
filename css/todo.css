@@ -1,0 +1,173 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.todo {
+    background-color: var(--white-2);
+    border-radius: 0.5rem;
+    width: 25vw;
+    height: 50vh;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.new-task {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    position: relative;
+}
+
+.new-task input {
+    border: none;
+    border-bottom: 1px solid var(--black-2);
+    background-color: transparent;
+    width: 100%;
+    padding: 0 0.5rem;
+    font-size: 1.05rem;
+    font-weight: 400;
+}
+
+.mensagem-erro {
+    color: var(--red);
+    font-size: 0.9rem;
+    position: absolute;
+    top: 100%;
+    margin: 0.2rem 0;
+}
+
+.new-task input:focus {
+    outline: 0;
+}
+
+.new-task input::placeholder {
+    color: var(--black-2);
+}
+
+.new-task button {
+    border: none;
+    background-color: var(--blue);
+    color: var(--white-2);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--blue-hover);
+    }
+}
+
+.to-complete {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--black);
+    margin: 2rem 0;
+}
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    overflow: auto;   
+}
+
+.tasks::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+
+.task {
+    background: var(--white);
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+}
+
+.task input[type='checkbox'] {
+    border-radius: 100%;
+    width: 1rem;
+    height: 1rem;
+    accent-color: var(--blue);
+    border-radius: 1rem;
+}
+
+.task div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.task div:first-child p {
+    font-weight: 600;
+    color: var(--black);
+}
+
+.task div:last-child {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.edit-task,
+.remove-task {
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.edit-task i,
+.remove-task i {
+    color: var(--white-2);
+    font-size: 1.1rem;
+}
+
+.edit-task {
+    background-color: var(--blue);
+
+    &:hover {
+        background-color: var(--blue-hover);
+    }
+}
+
+.remove-task {
+    background-color: var(--red);
+
+    &:hover {
+        background-color: var(--red-hover);
+    }
+}
+
+.checked p {
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+.checked {
+    background-color: var(--white-dim);
+}
+
+@media screen and (max-width: 430px) {
+    .container {
+        background-color: var(--white-2);
+    }
+
+    .todo {
+        width: 90vw;
+        height: 75vh;
+    }
+}

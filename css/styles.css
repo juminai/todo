@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('./reset.css');
+@import url('./todo.css');
+@import url('./modal.css');
+
+:root {
+    --white: #fff;
+    --white-dim: #ffffff8f;
+    --white-2: #eff8fc;
+    --blue: #5d91ff;
+    --blue-hover: #3c7ffc;
+    --red: #fd5a5b;
+    --red-hover :#ff493f;
+    --black: #000000;
+    --black-2: #00000067;
+    --font: 'DM Sans', sans-serif;
+}
+
+body {
+    font-family: var(--font);
+}
+
