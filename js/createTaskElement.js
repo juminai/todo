@@ -3,7 +3,6 @@ import { removeTask, markAsDone, renameTask } from './taskManager.js';
 export default function createTaskElement(task) {
     const tasksList = document.querySelector('.tasks');
 
-
     const taskElement = document.createElement('div');
     taskElement.classList.add('task');
     if (task.done) taskElement.classList.add('checked');
@@ -25,7 +24,7 @@ export default function createTaskElement(task) {
         </div>
     `;
 
-    tasksList.appendChild(taskElement);
+    tasksList.prepend(taskElement);
     removeTask(task.id);
     markAsDone(task.id);
     renameTask(task.id)

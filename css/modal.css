@@ -29,11 +29,12 @@
 
 .modal-editar-task input {
     border: none;
-    border-bottom: 1px solid var(--black);
+    border-bottom: 1px solid var(--black-2);
     background-color: transparent;
     padding: .5rem .2rem;
     font-weight: 500;
     font-size: 1.1rem;
+    font-family: var(--font);
 }
 
 .modal-editar-task p {

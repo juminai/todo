@@ -16,17 +16,20 @@
         <div class="container">
             <h1>To-Do List</h1>
             <div class="todo">
-
                 <div class="new-task">
-                    <input type="text" required placeholder="Informe sua tarefa" />
+                    <input
+                        type="text"
+                        required
+                        placeholder="Informe sua tarefa"
+                    />
                     <span class="mensagem-erro"></span>
 
-                    <button>Add</button>
+                    <button><i class="fa-solid fa-plus"></i></button>
                 </div>
 
                 <p class="to-complete">
-                    You have <span class="total-tasks"></span> task(s) to
-                    complete
+                    Você tem <span class="total-tasks"></span> tarefa(s) para
+                    concluir
                 </p>
 
                 <div class="tasks"></div>
@@ -34,14 +37,13 @@
 
             <div class="modal-background">
                 <div class="modal-editar-task">
-
-                    <p>Informe o novo titulo da tarefa</p>
+                    <p>Informe o novo título da tarefa</p>
 
                     <input type="text" required />
 
                     <div>
-                        <button class="close-modal">Close</button>
-                        <button class="save-modal">Save</button>
+                        <button class="close-modal">Fechar</button>
+                        <button class="save-modal">Salvar</button>
                     </div>
                 </div>
             </div>

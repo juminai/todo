@@ -1,4 +1,5 @@
 import toComplete from './toComplete.js';
+import { findIndex } from './taskManager.js';
 
 export function getLocal() {
     return JSON.parse(localStorage.getItem('tasks')) || [];
@@ -25,7 +26,7 @@ export function saveTask(newTaskName) {
 
 export function removeLocal(taskToRemove) {
     let tasks = getLocal();
-    let taskIndex = tasks.findIndex((task) => task.id == taskToRemove);
+    let taskIndex = findIndex(taskToRemove)
 
     tasks.splice(taskIndex, 1);
     saveLocal(tasks);

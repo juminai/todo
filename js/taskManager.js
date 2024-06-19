@@ -17,7 +17,7 @@ export function markAsDone(taskId) {
 
     checkbox.addEventListener('change', () => {
         let tasks = getLocal();
-        let taskIndex = tasks.findIndex((obj) => obj.id === taskId);
+        let taskIndex = findIndex(taskId);
 
         if (checkbox.checked) {
             taskElement.classList.add('checked');
@@ -33,36 +33,40 @@ export function markAsDone(taskId) {
 
 export function renameTask(taskId) {
     const taskElement = document.querySelector(`[data-task-id="${taskId}"]`);
-    const taskP = taskElement.querySelector('p')
-    const renameBtn = taskElement.querySelector('.edit-task')
-    const modal = document.querySelector('.modal-background')
-    const editInput = document.querySelector('.modal-editar-task input')
-    const saveBtn = document.querySelector('.save-modal')
-    const closeBtn = document.querySelector('.close-modal')
+    const taskP = taskElement.querySelector('p');
+    const renameBtn = taskElement.querySelector('.edit-task');
+    const modal = document.querySelector('.modal-background');
+    const editInput = document.querySelector('.modal-editar-task input');
+    const saveBtn = document.querySelector('.save-modal');
+    const closeBtn = document.querySelector('.close-modal');
 
     renameBtn.addEventListener('click', () => {
-        modal.style.display = 'flex'
+        modal.style.display = 'flex';
 
         let tasks = getLocal();
-        let taskIndex = tasks.findIndex((obj) => obj.id === taskId);
+        let taskIndex = findIndex(taskId);
 
-        editInput.value = tasks[taskIndex].name
+        editInput.value = tasks[taskIndex].name;
 
         function rename() {
-            tasks[taskIndex].name = editInput.value
+            tasks[taskIndex].name = editInput.value;
 
-            saveLocal(tasks)
-            taskP.textContent = editInput.value
-            close()
+            saveLocal(tasks);
+            taskP.textContent = editInput.value;
+            close();
         }
 
         function close() {
-            modal.style.display = 'none'
-            saveBtn.removeEventListener('click', rename)
+            modal.style.display = 'none';
+            saveBtn.removeEventListener('click', rename);
         }
 
-        saveBtn.addEventListener('click', rename)
-        closeBtn.addEventListener('click', close)
+        saveBtn.addEventListener('click', rename);
+        closeBtn.addEventListener('click', close);
+    });
+}
 
-    })
+export function findIndex(taskId) {
+    let tasks = getLocal();
+    return tasks.findIndex((obj) => obj.id === taskId);
 }
