@@ -1,5 +1,4 @@
 import { removeLocal, getLocal, saveLocal } from './local.js';
-import restoreTasks from './restoreTasks.js';
 
 export function removeTask(taskId) {
     const taskElement = document.querySelector(`[data-task-id="${taskId}"]`);
@@ -54,6 +53,7 @@ export function renameTask(taskId) {
             saveLocal(tasks);
             taskP.textContent = editInput.value;
             close();
+            closeBtn.removeEventListener('click', close)
         }
 
         function close() {
